@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Convite Ana & Alícia</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Convite Premium - Ana & Alícia</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -28,30 +27,46 @@
       position:relative;
     }
 
-    /* Fundo */
-
-    body::before{
-      content:'';
+    /* Fundo geral */
+    .fundo{
       position:fixed;
       inset:0;
-      background:
-      linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.82)),
-      url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1920&auto=format&fit=crop');
-      background-size:cover;
-      background-position:center;
+      display:flex;
       z-index:-2;
+    }
+
+    .fundo-esquerda,
+    .fundo-direita{
+      flex:1;
+      background-size:cover;
+      background-position:center top;
+      position:relative;
+    }
+
+    /* Memphis */
+    .fundo-esquerda{
+      background-image:
+      linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+      url('https://tmssl.akamaized.net/images/foto/galerie/memphis-depay-corinthians-1726234130-148017.jpg');
+    }
+
+    /* Calleri */
+    .fundo-direita{
+      background-image:
+      linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+      url('https://cdn.resfu.com/media/img_news/agencia-efe_multimedia_5502906.multimedia.photos.5502906.file.jpg');
     }
 
     .convite{
       width:100%;
-      max-width:1100px;
+      max-width:1050px;
       border-radius:35px;
       overflow:hidden;
-      background:rgba(10,10,10,0.92);
-      border:2px solid rgba(255,255,255,0.12);
+      background:rgba(10,10,10,0.93);
       backdrop-filter:blur(10px);
-      box-shadow:0 0 40px rgba(0,0,0,0.7);
-      animation:aparecer 1s ease;
+      box-shadow:0 0 50px rgba(0,0,0,0.9);
+      border:2px solid rgba(255,255,255,0.12);
+      animation:aparecer 1.2s ease;
     }
 
     @keyframes aparecer{
@@ -59,7 +74,6 @@
         opacity:0;
         transform:translateY(40px);
       }
-
       to{
         opacity:1;
         transform:translateY(0);
@@ -73,73 +87,63 @@
 
     .lado{
       flex:1;
-      min-width:320px;
-      position:relative;
-      padding:50px 30px;
+      min-width:300px;
+      padding:45px 25px;
       text-align:center;
+      position:relative;
       overflow:hidden;
     }
 
-    /* Fundo jogadores */
+    .corinthians{
+      background:
+      linear-gradient(135deg,#000,#2c2c2c);
+    }
 
-    .jogador{
+    .saopaulo{
+      background:
+      linear-gradient(135deg,#4d0000,#d10000);
+    }
+
+    .bg-player{
       position:absolute;
       inset:0;
       width:100%;
       height:100%;
       object-fit:cover;
-      opacity:0.4;
+      opacity:0.30;
     }
 
     .overlay{
       position:absolute;
       inset:0;
-      background:
-      linear-gradient(to top,
-      rgba(0,0,0,0.95),
-      rgba(0,0,0,0.25));
+      background:linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.25));
       z-index:1;
     }
 
-    .corinthians{
-      background:linear-gradient(135deg,#000,#2c2c2c);
-    }
-
-    .saopaulo{
-      background:linear-gradient(135deg,#420000,#cf0000);
-    }
-
-    /* Logos */
-
-    .logo{
+    .logo-time{
       width:130px;
-      margin-bottom:25px;
       position:relative;
       z-index:3;
-      filter:drop-shadow(0 0 15px rgba(255,255,255,0.3));
+      margin-bottom:25px;
+      filter:drop-shadow(0 0 15px rgba(255,255,255,0.35));
       animation:flutuar 3s ease-in-out infinite;
     }
 
     @keyframes flutuar{
-
       0%{
         transform:translateY(0px);
       }
-
       50%{
         transform:translateY(-10px);
       }
-
       100%{
         transform:translateY(0px);
       }
-
     }
 
     h1{
       font-size:4rem;
       color:white;
-      text-align:center;
       margin-bottom:15px;
       text-shadow:0 0 20px rgba(255,255,255,0.25);
     }
@@ -147,9 +151,9 @@
     h2{
       font-size:2rem;
       color:white;
+      margin-bottom:10px;
       position:relative;
       z-index:3;
-      margin-bottom:10px;
     }
 
     .time{
@@ -163,28 +167,51 @@
     .conteudo{
       padding:55px 35px;
       text-align:center;
-      background:linear-gradient(to bottom,#111,#000);
       color:white;
+      background:linear-gradient(to bottom,#111,#000);
     }
 
     .frase{
       font-size:1.2rem;
-      color:#ddd;
-      line-height:1.8;
       max-width:700px;
       margin:0 auto 35px;
+      color:#ddd;
+      line-height:1.8;
     }
 
-    .card{
+    .card-info{
       background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.1);
+      border:1px solid rgba(255,255,255,0.12);
       border-radius:30px;
       padding:35px;
-      box-shadow:0 0 30px rgba(0,0,0,0.4);
+      margin-top:30px;
+      box-shadow:0 0 25px rgba(0,0,0,0.45);
+      position:relative;
+      overflow:hidden;
+    }
+
+    /* Logos no cartão */
+    .logos-card{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:30px;
+      margin-bottom:25px;
+    }
+
+    .logos-card img{
+      width:75px;
+      filter:drop-shadow(0 0 10px rgba(255,255,255,0.25));
+    }
+
+    .vs{
+      font-size:1.4rem;
+      font-weight:700;
+      color:white;
     }
 
     .info{
-      margin:18px 0;
+      margin:20px 0;
       font-size:1.2rem;
       line-height:1.8;
     }
@@ -192,14 +219,15 @@
     .destaque{
       font-size:1.5rem;
       font-weight:700;
+      color:#fff;
     }
 
     .kids{
       display:inline-block;
       margin-top:20px;
-      padding:12px 24px;
       background:white;
       color:black;
+      padding:12px 24px;
       border-radius:50px;
       font-weight:600;
       box-shadow:0 0 15px rgba(255,255,255,0.3);
@@ -207,8 +235,8 @@
 
     .mapa{
       margin-top:35px;
-      border-radius:25px;
       overflow:hidden;
+      border-radius:25px;
       box-shadow:0 0 25px rgba(0,0,0,0.5);
     }
 
@@ -219,10 +247,10 @@
     }
 
     .footer{
-      background:black;
-      color:#aaa;
       text-align:center;
       padding:22px;
+      background:black;
+      color:#aaa;
       font-size:1rem;
       border-top:1px solid rgba(255,255,255,0.08);
     }
@@ -230,15 +258,11 @@
     @media(max-width:768px){
 
       h1{
-        font-size:2.8rem;
+        font-size:2.7rem;
       }
 
       h2{
         font-size:1.7rem;
-      }
-
-      .logo{
-        width:100px;
       }
 
       .conteudo{
@@ -249,6 +273,14 @@
         font-size:1rem;
       }
 
+      .logo-time{
+        width:100px;
+      }
+
+      .logos-card img{
+        width:55px;
+      }
+
     }
 
   </style>
@@ -256,81 +288,93 @@
 
 <body>
 
+  <!-- Fundo -->
+  <div class="fundo">
+
+    <div class="fundo-esquerda"></div>
+
+    <div class="fundo-direita"></div>
+
+  </div>
+
   <div class="convite">
 
     <div class="topo">
 
       <!-- Corinthians -->
-
       <div class="lado corinthians">
 
-        <!-- Memphis -->
-
-        <img
-        class="jogador"
+        <img class="bg-player"
         src="https://tmssl.akamaized.net/images/foto/galerie/memphis-depay-corinthians-1726234130-148017.jpg"
         alt="Memphis">
 
         <div class="overlay"></div>
 
-        <!-- Logo Corinthians -->
-
         <img
-        class="logo"
+        class="logo-time"
         src="https://logodetimes.com/times/corinthians/logo-corinthians-4096.png"
         alt="Corinthians">
 
         <h2>Alícia 🖤🤍</h2>
 
         <p class="time">
-          Corintiana ⚽
+          Corintiana
         </p>
 
       </div>
 
       <!-- São Paulo -->
-
       <div class="lado saopaulo">
 
-        <!-- Calleri -->
-
-        <img
-        class="jogador"
+        <img class="bg-player"
         src="https://cdn.resfu.com/media/img_news/agencia-efe_multimedia_5502906.multimedia.photos.5502906.file.jpg"
         alt="Calleri">
 
         <div class="overlay"></div>
 
-        <!-- Logo São Paulo -->
-
         <img
-        class="logo"
+        class="logo-time"
         src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Sao_Paulo_FC_logo.svg"
         alt="São Paulo">
 
         <h2>Ana ❤️🖤🤍</h2>
 
         <p class="time">
-          São Paulina ⚽
+          São Paulina
         </p>
 
       </div>
 
     </div>
 
-    <!-- Conteúdo -->
-
     <div class="conteudo">
 
-      <h1>13 ANOS 🎉</h1>
+      <h1>13 ANOS ⚽🔥</h1>
 
       <p class="frase">
         Dois times. Duas torcidas.
         Um só aniversário.
-        Venha comemorar com a gente esse clássico inesquecível ⚽🔥
+        Venha comemorar com a gente esse clássico inesquecível 🎉
       </p>
 
-      <div class="card">
+      <div class="card-info">
+
+        <!-- Logos dentro do cartão -->
+        <div class="logos-card">
+
+          <img
+          src="https://logodetimes.com/times/corinthians/logo-corinthians-4096.png"
+          alt="Corinthians">
+
+          <div class="vs">
+            VS
+          </div>
+
+          <img
+          src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Sao_Paulo_FC_logo.svg"
+          alt="São Paulo">
+
+        </div>
 
         <p class="info">
           📅 <span class="destaque">23 de Maio</span>
@@ -367,7 +411,7 @@
     </div>
 
     <div class="footer">
-      Esperamos você para esse clássico inesquecível ⚽🔥
+      Esperamos você para esse clássico ⚽🎂
     </div>
 
   </div>
