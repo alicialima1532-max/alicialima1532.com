@@ -1,43 +1,56 @@
-# alicialima1532.com<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Convite de Aniversário - Ana & Alícia</title>
+  <title>Convite Premium - Ana & Alícia</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:'Poppins', sans-serif;
     }
 
     body{
       min-height:100vh;
-      background: linear-gradient(
-        90deg,
-        #000 0%,
-        #111 50%,
-        #8b0000 50%,
-        #ff0000 100%
-      );
-      color:white;
+      background:
+      linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+      url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1920&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
       display:flex;
       justify-content:center;
       align-items:center;
-      padding:20px;
+      padding:30px;
+      overflow-x:hidden;
     }
 
     .convite{
       width:100%;
-      max-width:950px;
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(10px);
-      border-radius:25px;
+      max-width:1000px;
+      border-radius:30px;
       overflow:hidden;
-      box-shadow:0 0 25px rgba(0,0,0,0.6);
-      border:2px solid rgba(255,255,255,0.2);
+      background:rgba(10,10,10,0.92);
+      backdrop-filter:blur(12px);
+      box-shadow:0 0 40px rgba(0,0,0,0.8);
+      border:2px solid rgba(255,255,255,0.15);
+      animation: aparecer 1.2s ease;
+    }
+
+    @keyframes aparecer{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
     }
 
     .topo{
@@ -48,104 +61,172 @@
     .lado{
       flex:1;
       min-width:300px;
-      padding:30px;
+      padding:40px 25px;
       text-align:center;
+      position:relative;
+    }
+
+    .lado::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:rgba(255,255,255,0.03);
     }
 
     .corinthians{
-      background: linear-gradient(to bottom, #000, #222);
+      background:
+      linear-gradient(135deg,#000,#2d2d2d);
     }
 
     .saopaulo{
-      background: linear-gradient(to bottom, #550000, #c00000);
+      background:
+      linear-gradient(135deg,#400000,#d10000);
     }
 
-    .lado img{
-      width:180px;
-      max-width:90%;
-      border-radius:15px;
-      margin-bottom:20px;
-      box-shadow:0 0 15px rgba(255,255,255,0.2);
+    .escudo{
+      width:170px;
+      margin-bottom:25px;
+      filter:drop-shadow(0 0 12px rgba(255,255,255,0.25));
+      animation: flutuar 3s ease-in-out infinite;
+      position:relative;
+      z-index:2;
+    }
+
+    @keyframes flutuar{
+      0%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-10px);
+      }
+      100%{
+        transform:translateY(0px);
+      }
     }
 
     h1{
-      font-size:3rem;
+      font-size:4rem;
+      color:white;
       margin-bottom:10px;
-      text-shadow:2px 2px 10px rgba(0,0,0,0.5);
+      text-shadow:0 0 20px rgba(255,255,255,0.25);
     }
 
     h2{
       font-size:2rem;
-      margin-bottom:15px;
+      color:white;
+      margin-bottom:10px;
+      position:relative;
+      z-index:2;
     }
 
-    .idade{
-      font-size:1.4rem;
-      margin-bottom:20px;
-      font-weight:bold;
+    .time{
+      font-size:1.2rem;
+      color:#f1f1f1;
+      font-weight:300;
+      position:relative;
+      z-index:2;
+    }
+
+    .conteudo{
+      padding:50px 35px;
+      text-align:center;
+      color:white;
+      background:linear-gradient(to bottom,#111,#000);
+    }
+
+    .frase{
+      font-size:1.2rem;
+      max-width:700px;
+      margin:0 auto 30px;
+      color:#ddd;
+      line-height:1.8;
+    }
+
+    .card-info{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:25px;
+      padding:30px;
+      margin-top:30px;
+      box-shadow:0 0 25px rgba(0,0,0,0.4);
     }
 
     .info{
-      padding:35px;
-      text-align:center;
-      background:#111;
-    }
-
-    .info p{
-      margin:12px 0;
+      margin:20px 0;
       font-size:1.2rem;
-      line-height:1.6;
+      line-height:1.8;
     }
 
     .destaque{
-      font-size:1.4rem;
-      font-weight:bold;
+      font-size:1.5rem;
+      font-weight:700;
       color:#fff;
     }
 
     .kids{
-      margin-top:20px;
-      font-size:1.2rem;
-      background:#fff;
-      color:#000;
       display:inline-block;
-      padding:10px 18px;
-      border-radius:12px;
-      font-weight:bold;
+      margin-top:20px;
+      background:white;
+      color:black;
+      padding:12px 24px;
+      border-radius:50px;
+      font-weight:600;
+      box-shadow:0 0 15px rgba(255,255,255,0.3);
     }
 
     .mapa{
-      margin-top:25px;
+      margin-top:30px;
+      overflow:hidden;
+      border-radius:25px;
+      box-shadow:0 0 25px rgba(0,0,0,0.5);
     }
 
     iframe{
       width:100%;
-      height:300px;
+      height:320px;
       border:none;
-      border-radius:18px;
     }
 
     .footer{
       text-align:center;
-      padding:18px;
-      background:#000;
+      padding:22px;
+      background:black;
+      color:#aaa;
       font-size:1rem;
-      color:#ccc;
+      border-top:1px solid rgba(255,255,255,0.08);
     }
 
-    @media(max-width:700px){
+    .brilho{
+      position:absolute;
+      width:300px;
+      height:300px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.06);
+      filter:blur(80px);
+      top:-120px;
+      right:-80px;
+    }
+
+    @media(max-width:768px){
+
       h1{
-        font-size:2.2rem;
+        font-size:2.8rem;
       }
 
       h2{
-        font-size:1.5rem;
+        font-size:1.7rem;
       }
 
-      .info p{
+      .conteudo{
+        padding:35px 20px;
+      }
+
+      .info{
         font-size:1rem;
       }
+
     }
+
   </style>
 </head>
 
@@ -155,59 +236,85 @@
 
     <div class="topo">
 
-      <!-- Lado Corinthians -->
+      <!-- Corinthians -->
       <div class="lado corinthians">
-        <img src="https://logodetimes.com/times/corinthians/logo-corinthians-4096.png" alt="Corinthians">
-        <h2>Alícia ⚽</h2>
-        <p class="idade">Corintiana 🖤🤍</p>
+
+        <div class="brilho"></div>
+
+        <img
+        class="escudo"
+        src="https://logodetimes.com/times/corinthians/logo-corinthians-4096.png"
+        alt="Corinthians">
+
+        <h2>Alícia 🖤🤍</h2>
+        <p class="time">Corintiana</p>
+
       </div>
 
-      <!-- Lado São Paulo -->
+      <!-- São Paulo -->
       <div class="lado saopaulo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Sao_Paulo_FC_logo.svg" alt="São Paulo">
-        <h2>Ana ⚽</h2>
-        <p class="idade">São Paulina ❤️🖤🤍</p>
+
+        <div class="brilho"></div>
+
+        <img
+        class="escudo"
+        src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Sao_Paulo_FC_logo.svg"
+        alt="São Paulo">
+
+        <h2>Ana ❤️🖤🤍</h2>
+        <p class="time">São Paulina</p>
+
       </div>
 
     </div>
 
-    <div class="info">
+    <div class="conteudo">
 
-      <h1>13 Anos 🎉</h1>
+      <h1>13 ANOS</h1>
 
-      <p>
-        Você está convidado para o nosso almoço de aniversário!
+      <p class="frase">
+        Dois times. Duas torcidas. Um só aniversário.
+        Venha comemorar com a gente esse dia especial ⚽🎉
       </p>
 
-      <p class="destaque">
-        Dia 23/05 às 12:00
-      </p>
+      <div class="card-info">
 
-      <p>
-        Nosso aniversário é dia 22/05, mas a festa será no sábado para comemorarmos juntos!
-      </p>
+        <p class="info">
+          📅 <span class="destaque">23 de Maio</span>
+        </p>
 
-      <p>
-        📍 <strong>Local:</strong><br>
-        Rua Verão, 29 - Juquehy
-      </p>
+        <p class="info">
+          ⏰ <span class="destaque">12:00</span>
+        </p>
 
-      <div class="kids">
-        Evento exclusivo para crianças 🎈
+        <p class="info">
+          📍 Rua Verão, 29 - Juquehy
+        </p>
+
+        <p class="info">
+          Nosso aniversário é dia 22/05,
+          mas a festa será no sábado para aproveitarmos juntos!
+        </p>
+
+        <div class="kids">
+          Evento exclusivo para crianças 🎈
+        </div>
+
       </div>
 
       <div class="mapa">
+
         <iframe
-          src="https://www.google.com/maps?q=Rua+Verão+29+Juquehy&output=embed"
-          allowfullscreen=""
-          loading="lazy">
+        src="https://www.google.com/maps?q=Rua+Verão+29+Juquehy&output=embed"
+        loading="lazy">
         </iframe>
+
       </div>
 
     </div>
 
     <div class="footer">
-      Esperamos você para comemorar com a gente! 🎂
+      Esperamos você para esse clássico inesquecível ⚽🔥
     </div>
 
   </div>
